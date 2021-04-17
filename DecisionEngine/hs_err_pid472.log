@@ -1,0 +1,136 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_INT_DIVIDE_BY_ZERO (0xc0000094) at pc=0x02c54aa3, pid=472, tid=3048
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_15-b04 mixed mode, sharing)
+# Problematic frame:
+# C  [algo.dll+0x4aa3]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x003663f8):  JavaThread "main" [_thread_in_native, id=3048]
+
+siginfo: ExceptionCode=0xc0000094
+
+Registers:
+EAX=0x00000000, EBX=0x00000000, ECX=0x00000000, EDX=0x00000000
+ESP=0x0006f58c, EBP=0x0006f824, ESI=0x00000000, EDI=0x00000000
+EIP=0x02c54aa3, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x0006f58c)
+0x0006f58c:   00000000 0006f88c 26a85d07 100012ea
+0x0006f59c:   00a38130 00000000 0000ffff 7ffdd000
+0x0006f5ac:   00182cb8 7ffdd000 00000000 00a381c8
+0x0006f5bc:   00182cc8 0006f690 00000000 00000000
+0x0006f5cc:   00000000 000942c8 0006f57c 000000c3
+0x0006f5dc:   00182970 100012ea 00000048 0000f644
+0x0006f5ec:   00000360 0006f820 7c911008 7c911066
+0x0006f5fc:   7c9101bb 02d99902 00002150 0006f810 
+
+Instructions: (pc=0x02c54aa3)
+0x02c54a93:   89 9c 24 98 00 00 00 8b 44 24 28 8b 4c 24 3c 99
+0x02c54aa3:   f7 fe 8d 79 fe c6 84 24 90 02 00 00 0f c7 84 24 
+
+
+Stack: [0x00030000,0x00070000),  sp=0x0006f58c,  free space=253k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [algo.dll+0x4aa3]
+C  [algo.dll+0x1530]
+C  [libJNIInvok.dll+0x146f]
+j  com.security.jni.JNIInvocation.getPatternScore(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)D+0
+j  com.security.jni.JNIHelper.main([Ljava/lang/String;)V+68
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x873ed]
+V  [jvm.dll+0xdfb96]
+V  [jvm.dll+0x872be]
+V  [jvm.dll+0x8e501]
+C  [javaw.exe+0x14c5]
+C  [javaw.exe+0x3151]
+C  [kernel32.dll+0x17067]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.security.jni.JNIInvocation.getPatternScore(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)D+0
+j  com.security.jni.JNIHelper.main([Ljava/lang/String;)V+68
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x00a223a0 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=192]
+  0x00a210b8 JavaThread "CompilerThread0" daemon [_thread_blocked, id=2544]
+  0x00a202a8 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=2888]
+  0x00a1b1e0 JavaThread "Finalizer" daemon [_thread_blocked, id=1476]
+  0x00a19d98 JavaThread "Reference Handler" daemon [_thread_blocked, id=2116]
+=>0x003663f8 JavaThread "main" [_thread_in_native, id=3048]
+
+Other Threads:
+  0x009f83e8 VMThread [id=3964]
+  0x00a236d0 WatcherThread [id=3564]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 576K, used 314K [0x22a80000, 0x22b20000, 0x22f60000)
+  eden space 512K,  61% used [0x22a80000, 0x22acea68, 0x22b00000)
+  from space 64K,   0% used [0x22b00000, 0x22b00000, 0x22b10000)
+  to   space 64K,   0% used [0x22b10000, 0x22b10000, 0x22b20000)
+ tenured generation   total 1408K, used 0K [0x22f60000, 0x230c0000, 0x26a80000)
+   the space 1408K,   0% used [0x22f60000, 0x22f60000, 0x22f60200, 0x230c0000)
+ compacting perm gen  total 8192K, used 24K [0x26a80000, 0x27280000, 0x2aa80000)
+   the space 8192K,   0% used [0x26a80000, 0x26a86110, 0x26a86200, 0x27280000)
+    ro space 8192K,  63% used [0x2aa80000, 0x2af92350, 0x2af92400, 0x2b280000)
+    rw space 12288K,  47% used [0x2b280000, 0x2b827658, 0x2b827800, 0x2be80000)
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Program Files\Java\jre1.5.0_15\bin\javaw.exe
+0x7c900000 - 0x7c9af000 	C:\WINDOWS\system32\ntdll.dll
+0x7c800000 - 0x7c8f6000 	C:\WINDOWS\system32\kernel32.dll
+0x77dd0000 - 0x77e6b000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x77e70000 - 0x77f02000 	C:\WINDOWS\system32\RPCRT4.dll
+0x77fe0000 - 0x77ff1000 	C:\WINDOWS\system32\Secur32.dll
+0x7e410000 - 0x7e4a1000 	C:\WINDOWS\system32\USER32.dll
+0x77f10000 - 0x77f59000 	C:\WINDOWS\system32\GDI32.dll
+0x77c10000 - 0x77c68000 	C:\WINDOWS\system32\MSVCRT.dll
+0x6d640000 - 0x6d7de000 	C:\Program Files\Java\jre1.5.0_15\bin\client\jvm.dll
+0x76b40000 - 0x76b6d000 	C:\WINDOWS\system32\WINMM.dll
+0x6d290000 - 0x6d298000 	C:\Program Files\Java\jre1.5.0_15\bin\hpi.dll
+0x76bf0000 - 0x76bfb000 	C:\WINDOWS\system32\PSAPI.DLL
+0x6d610000 - 0x6d61c000 	C:\Program Files\Java\jre1.5.0_15\bin\verify.dll
+0x6d310000 - 0x6d32d000 	C:\Program Files\Java\jre1.5.0_15\bin\java.dll
+0x6d630000 - 0x6d63f000 	C:\Program Files\Java\jre1.5.0_15\bin\zip.dll
+0x10000000 - 0x10014000 	C:\Program Files\Java\jre1.5.0_15\bin\libJNIInvok.dll
+0x02c50000 - 0x02c75000 	C:\Program Files\Java\jre1.5.0_15\bin\algo.dll
+0x774e0000 - 0x7761d000 	C:\WINDOWS\system32\ole32.dll
+0x77120000 - 0x771ab000 	C:\WINDOWS\system32\OLEAUT32.dll
+0x5ad70000 - 0x5ada8000 	C:\WINDOWS\system32\uxtheme.dll
+0x76fd0000 - 0x7704f000 	C:\WINDOWS\system32\CLBCATQ.DLL
+0x77050000 - 0x77115000 	C:\WINDOWS\system32\COMRes.dll
+0x77c00000 - 0x77c08000 	C:\WINDOWS\system32\VERSION.dll
+
+VM Arguments:
+java_command: com.security.jni.JNIHelper
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.5.0_15
+PATH=C:\Program Files\Java\jre1.5.0_15\bin\client;C:\Program Files\Java\jre1.5.0_15\bin;C:\Program Files\bin\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\Windows Imaging\;C:\Program Files\Common Files\Symbian\tools;C:\Program Files\CSL Arm Toolchain\bin;C:\Program Files\Microsoft SQL Server\90\Tools\binn\;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin
+USERNAME=Ashish.Srivastava
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 15 Model 3 Stepping 4, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows XP Build 2600 Service Pack 3
+
+CPU:total 2 (cores per cpu 1, threads per core 2) family 15 model 3 stepping 4, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ht
+
+Memory: 4k page, physical 1046508k(310304k free), swap 1735016k(830428k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_15-b04) for windows-x86, built on Feb  9 2008 01:07:28 by "java_re" with MS VC++ 6.0
+

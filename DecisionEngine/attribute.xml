@@ -1,0 +1,38 @@
+<xml-fragment>  
+    <Attributes>
+		<Attribute>
+			<ParameterName>pattern</ParameterName>
+			<ParameterValue>r625_d63f78_d141f46_d79f109_d125f16_d78f140_d78f63_d78_r109</ParameterValue>
+		</Attribute>
+		<Attribute>
+			<ParameterName>TimeStamp</ParameterName>
+			<ParameterValue>06-05-2009</ParameterValue>
+		</Attribute>
+		<Attribute>
+			<ParameterName>IPAddress</ParameterName>
+			<ParameterValue>172.17.241.77</ParameterValue>
+		</Attribute>
+		<Attribute>
+			<ParameterName>OperatingSystem</ParameterName>
+			<ParameterValue>
+				Microsoft Windows NT 5.2.3790 Service Pack 2
+			</ParameterValue>
+		</Attribute>
+		<Attribute>
+			<ParameterName>ProcessorCount</ParameterName>
+			<ParameterValue>2</ParameterValue>
+		</Attribute>
+		<Attribute>
+			<ParameterName>MachineName</ParameterName>
+			<ParameterValue>BLR-RKT-FD120</ParameterValue>
+		</Attribute>
+		<Attribute>
+			<ParameterName>UserDomainName</ParameterName>
+			<ParameterValue>INNIIT-TECH</ParameterValue>
+		</Attribute>
+		<Attribute>
+			<ParameterName>UserName</ParameterName>
+			<ParameterValue>Deepesh.PC</ParameterValue>
+		</Attribute>
+	</Attributes> 
+</xml-fragment>
